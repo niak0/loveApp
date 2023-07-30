@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="loveApp" customModuleProvider="target">
+            <connections>
+                <outlet property="feedProfileView" destination="aMw-Bs-pQQ" id="Ept-FA-t4A"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="toE-pc-1EI">
+                    <rect key="frame" x="9" y="59" width="376.66666666666669" height="78"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qua-ct-zCW">
+                            <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="78"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="profil"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4l-To-v20">
+                            <rect key="frame" x="155.66666666666666" y="0.0" width="65.333333333333343" height="78"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="alev"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOP-KQ-sX2">
+                            <rect key="frame" x="311" y="0.0" width="65.666666666666686" height="78"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="mesaj"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="78" id="QnL-ra-haA"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMw-Bs-pQQ">
+                    <rect key="frame" x="9" y="145" width="376" height="585"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeX-ly-bsX">
+                    <rect key="frame" x="20" y="738" width="352" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-1d-UsJ">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="80"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="yenile"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-Cn-jib">
+                            <rect key="frame" x="64" y="0.0" width="80" height="80"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="kapat"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-aM-Rsj">
+                            <rect key="frame" x="144" y="0.0" width="64" height="80"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="superLike"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjS-Hz-6LG">
+                            <rect key="frame" x="208" y="0.0" width="80" height="80"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="like"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsH-Pf-6fT">
+                            <rect key="frame" x="288" y="0.0" width="64" height="80"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="boost"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="ZL8-kU-ZAr"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="toE-pc-1EI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="48k-DD-yt0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zeX-ly-bsX" secondAttribute="trailing" constant="21" id="BcU-Uh-3Bq"/>
+                <constraint firstItem="zeX-ly-bsX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="JDB-JI-ZpJ"/>
+                <constraint firstItem="zeX-ly-bsX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="L8g-5R-d0a"/>
+                <constraint firstItem="aMw-Bs-pQQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="9" id="ORN-xN-pjt"/>
+                <constraint firstItem="zeX-ly-bsX" firstAttribute="top" secondItem="aMw-Bs-pQQ" secondAttribute="bottom" constant="8" id="TRP-LF-kz7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="toE-pc-1EI" secondAttribute="trailing" constant="7.3300000000000001" id="TpO-S1-ce7"/>
+                <constraint firstItem="toE-pc-1EI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="9" id="ah8-Vq-mOp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aMw-Bs-pQQ" secondAttribute="trailing" constant="8" id="kUQ-sW-cNQ"/>
+                <constraint firstItem="aMw-Bs-pQQ" firstAttribute="top" secondItem="toE-pc-1EI" secondAttribute="bottom" constant="8" id="qfb-rI-78P"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alev" width="64" height="64"/>
+        <image name="boost" width="64" height="64"/>
+        <image name="kapat" width="80" height="80"/>
+        <image name="like" width="80" height="80"/>
+        <image name="mesaj" width="34.5" height="30.5"/>
+        <image name="profil" width="26" height="33.5"/>
+        <image name="superLike" width="64" height="64"/>
+        <image name="yenile" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
