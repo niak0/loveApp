@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CC457CE2A77AB1A00C3DF81 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 6CC457CD2A77AB1A00C3DF81 /* ReadMe.md */; };
 		B12338B92A7422B500DF2CE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12338B82A7422B500DF2CE9 /* AppDelegate.swift */; };
 		B12338BB2A7422B500DF2CE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12338BA2A7422B500DF2CE9 /* SceneDelegate.swift */; };
 		B12338C22A7422B600DF2CE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12338C12A7422B600DF2CE9 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6CC457CD2A77AB1A00C3DF81 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		B12338B52A7422B500DF2CE9 /* loveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12338B82A7422B500DF2CE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12338BA2A7422B500DF2CE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				B12338BA2A7422B500DF2CE9 /* SceneDelegate.swift */,
 				B12338C12A7422B600DF2CE9 /* Assets.xcassets */,
 				B12338C32A7422B600DF2CE9 /* LaunchScreen.storyboard */,
+				6CC457CD2A77AB1A00C3DF81 /* ReadMe.md */,
 				B12338FB2A75427E00DF2CE9 /* GoogleService-Info.plist */,
 				B12338C62A7422B600DF2CE9 /* Info.plist */,
 			);
@@ -307,6 +310,7 @@
 				B123390A2A754A1900DF2CE9 /* HomeVC.xib in Resources */,
 				B12338C52A7422B600DF2CE9 /* LaunchScreen.storyboard in Resources */,
 				B12338C22A7422B600DF2CE9 /* Assets.xcassets in Resources */,
+				6CC457CE2A77AB1A00C3DF81 /* ReadMe.md in Resources */,
 				B123390E2A75577900DF2CE9 /* CustomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
