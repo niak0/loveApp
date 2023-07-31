@@ -10,11 +10,12 @@ class HomeVC: UIViewController {
         UserModel(userName: "Nida", userAge: 21, userLocation: "Sivas", userImages: [UIImage(named: "4")!,UIImage(named: "5")!,UIImage(named: "2")!]),
         UserModel(userName: "Zeliş", userAge: 58, userLocation: "Kırıkkale", userImages: [UIImage(named: "6")!,UIImage(named: "7")!,UIImage(named: "2")!,UIImage(named: "3")!]),
     ]
-
+    var coordinator : Coordinator?
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setProfiles()
+        coordinator = Coordinator(navigationController: self.navigationController!)
     }
     
     // MARK: - Functions
@@ -28,6 +29,9 @@ class HomeVC: UIViewController {
     }
     
     // MARK: - Actions
+    @IBAction func profileButtonTapped(_ sender: UIButton) {
+        coordinator?.push(.loginVC)
+    }
 }
 
 // MARK: - Extensions

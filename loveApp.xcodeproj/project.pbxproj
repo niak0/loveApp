@@ -23,9 +23,11 @@
 		B123390A2A754A1900DF2CE9 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12339082A754A1900DF2CE9 /* HomeVC.xib */; };
 		B123390E2A75577900DF2CE9 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B123390D2A75577900DF2CE9 /* CustomView.xib */; };
 		B12339102A75578600DF2CE9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123390F2A75578600DF2CE9 /* CustomView.swift */; };
-		B12339122A755DA300DF2CE9 /* Extensions+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12339112A755DA300DF2CE9 /* Extensions+Helpers.swift */; };
+		B12339122A755DA300DF2CE9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12339112A755DA300DF2CE9 /* UIView+Extensions.swift */; };
 		B12339152A75865500DF2CE9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12339142A75865500DF2CE9 /* Models.swift */; };
 		B123391B2A76FD5A00DF2CE9 /* CustomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123391A2A76FD5A00DF2CE9 /* CustomViewModel.swift */; };
+		B123391D2A77F92F00DF2CE9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123391C2A77F92F00DF2CE9 /* UIColor+Extension.swift */; };
+		B12339242A77FE6000DF2CE9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12339232A77FE6000DF2CE9 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +49,14 @@
 
 /* Begin PBXFileReference section */
 		6CC457CD2A77AB1A00C3DF81 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
-		B12338B52A7422B500DF2CE9 /* loveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B12338B52A7422B500DF2CE9 /* LoveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12338B82A7422B500DF2CE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12338BA2A7422B500DF2CE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B12338C12A7422B600DF2CE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B12338C62A7422B600DF2CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B12338CB2A7422B600DF2CE9 /* loveAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = loveAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B12338CB2A7422B600DF2CE9 /* LoveAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoveAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12338CF2A7422B600DF2CE9 /* loveAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveAppTests.swift; sourceTree = "<group>"; };
-		B12338D52A7422B600DF2CE9 /* loveAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = loveAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B12338D52A7422B600DF2CE9 /* LoveAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoveAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12338D92A7422B600DF2CE9 /* loveAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveAppUITests.swift; sourceTree = "<group>"; };
 		B12338DB2A7422B600DF2CE9 /* loveAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B12338F22A7534EF00DF2CE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,9 +68,11 @@
 		B12339082A754A1900DF2CE9 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		B123390D2A75577900DF2CE9 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		B123390F2A75578600DF2CE9 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
-		B12339112A755DA300DF2CE9 /* Extensions+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Helpers.swift"; sourceTree = "<group>"; };
+		B12339112A755DA300DF2CE9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B12339142A75865500DF2CE9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B123391A2A76FD5A00DF2CE9 /* CustomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModel.swift; sourceTree = "<group>"; };
+		B123391C2A77F92F00DF2CE9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B12339232A77FE6000DF2CE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,9 @@
 		B12338AC2A7422B500DF2CE9 = {
 			isa = PBXGroup;
 			children = (
-				B12338B72A7422B500DF2CE9 /* loveApp */,
-				B12338CE2A7422B600DF2CE9 /* loveAppTests */,
-				B12338D82A7422B600DF2CE9 /* loveAppUITests */,
+				B12338B72A7422B500DF2CE9 /* LoveApp */,
+				B12338CE2A7422B600DF2CE9 /* LoveAppTests */,
+				B12338D82A7422B600DF2CE9 /* LoveAppUITests */,
 				B12338B62A7422B500DF2CE9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,47 +113,44 @@
 		B12338B62A7422B500DF2CE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B12338B52A7422B500DF2CE9 /* loveApp.app */,
-				B12338CB2A7422B600DF2CE9 /* loveAppTests.xctest */,
-				B12338D52A7422B600DF2CE9 /* loveAppUITests.xctest */,
+				B12338B52A7422B500DF2CE9 /* LoveApp.app */,
+				B12338CB2A7422B600DF2CE9 /* LoveAppTests.xctest */,
+				B12338D52A7422B600DF2CE9 /* LoveAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B12338B72A7422B500DF2CE9 /* loveApp */ = {
+		B12338B72A7422B500DF2CE9 /* LoveApp */ = {
 			isa = PBXGroup;
 			children = (
+				B123391E2A77F9DE00DF2CE9 /* AppFiles */,
+				B12339202A77FA7100DF2CE9 /* Screens */,
 				B12339132A75864900DF2CE9 /* Models */,
-				B123390C2A75576900DF2CE9 /* CustomView */,
-				B123390B2A75520300DF2CE9 /* Extensions+Helpers */,
-				B12339062A754A0A00DF2CE9 /* HomeScreen */,
-				B12338E82A743AE800DF2CE9 /* LoginScreen */,
-				B12338B82A7422B500DF2CE9 /* AppDelegate.swift */,
-				B12338BA2A7422B500DF2CE9 /* SceneDelegate.swift */,
-				B12338C12A7422B600DF2CE9 /* Assets.xcassets */,
-				B12338C32A7422B600DF2CE9 /* LaunchScreen.storyboard */,
+				B12339212A77FAA200DF2CE9 /* Managers */,
+				B123390B2A75520300DF2CE9 /* Extensions */,
+				B123391F2A77FA3C00DF2CE9 /* Sources */,
 				6CC457CD2A77AB1A00C3DF81 /* ReadMe.md */,
 				B12338FB2A75427E00DF2CE9 /* GoogleService-Info.plist */,
 				B12338C62A7422B600DF2CE9 /* Info.plist */,
 			);
-			path = loveApp;
+			path = LoveApp;
 			sourceTree = "<group>";
 		};
-		B12338CE2A7422B600DF2CE9 /* loveAppTests */ = {
+		B12338CE2A7422B600DF2CE9 /* LoveAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				B12338CF2A7422B600DF2CE9 /* loveAppTests.swift */,
 			);
-			path = loveAppTests;
+			path = LoveAppTests;
 			sourceTree = "<group>";
 		};
-		B12338D82A7422B600DF2CE9 /* loveAppUITests */ = {
+		B12338D82A7422B600DF2CE9 /* LoveAppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				B12338D92A7422B600DF2CE9 /* loveAppUITests.swift */,
 				B12338DB2A7422B600DF2CE9 /* loveAppUITestsLaunchTests.swift */,
 			);
-			path = loveAppUITests;
+			path = LoveAppUITests;
 			sourceTree = "<group>";
 		};
 		B12338E82A743AE800DF2CE9 /* LoginScreen */ = {
@@ -171,12 +172,13 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
-		B123390B2A75520300DF2CE9 /* Extensions+Helpers */ = {
+		B123390B2A75520300DF2CE9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B12339112A755DA300DF2CE9 /* Extensions+Helpers.swift */,
+				B12339112A755DA300DF2CE9 /* UIView+Extensions.swift */,
+				B123391C2A77F92F00DF2CE9 /* UIColor+Extension.swift */,
 			);
-			path = "Extensions+Helpers";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B123390C2A75576900DF2CE9 /* CustomView */ = {
@@ -197,12 +199,48 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B123391E2A77F9DE00DF2CE9 /* AppFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B12338B82A7422B500DF2CE9 /* AppDelegate.swift */,
+				B12338BA2A7422B500DF2CE9 /* SceneDelegate.swift */,
+				B12338C12A7422B600DF2CE9 /* Assets.xcassets */,
+				B12338C32A7422B600DF2CE9 /* LaunchScreen.storyboard */,
+			);
+			path = AppFiles;
+			sourceTree = "<group>";
+		};
+		B123391F2A77FA3C00DF2CE9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B123390C2A75576900DF2CE9 /* CustomView */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B12339202A77FA7100DF2CE9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B12339062A754A0A00DF2CE9 /* HomeScreen */,
+				B12338E82A743AE800DF2CE9 /* LoginScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B12339212A77FAA200DF2CE9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B12339232A77FE6000DF2CE9 /* Coordinator.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B12338B42A7422B500DF2CE9 /* loveApp */ = {
+		B12338B42A7422B500DF2CE9 /* LoveApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B12338DF2A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "loveApp" */;
+			buildConfigurationList = B12338DF2A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "LoveApp" */;
 			buildPhases = (
 				B12338B12A7422B500DF2CE9 /* Sources */,
 				B12338B22A7422B500DF2CE9 /* Frameworks */,
@@ -212,16 +250,16 @@
 			);
 			dependencies = (
 			);
-			name = loveApp;
+			name = LoveApp;
 			packageProductDependencies = (
 			);
 			productName = loveApp;
-			productReference = B12338B52A7422B500DF2CE9 /* loveApp.app */;
+			productReference = B12338B52A7422B500DF2CE9 /* LoveApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B12338CA2A7422B600DF2CE9 /* loveAppTests */ = {
+		B12338CA2A7422B600DF2CE9 /* LoveAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B12338E22A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "loveAppTests" */;
+			buildConfigurationList = B12338E22A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "LoveAppTests" */;
 			buildPhases = (
 				B12338C72A7422B600DF2CE9 /* Sources */,
 				B12338C82A7422B600DF2CE9 /* Frameworks */,
@@ -232,14 +270,14 @@
 			dependencies = (
 				B12338CD2A7422B600DF2CE9 /* PBXTargetDependency */,
 			);
-			name = loveAppTests;
+			name = LoveAppTests;
 			productName = loveAppTests;
-			productReference = B12338CB2A7422B600DF2CE9 /* loveAppTests.xctest */;
+			productReference = B12338CB2A7422B600DF2CE9 /* LoveAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B12338D42A7422B600DF2CE9 /* loveAppUITests */ = {
+		B12338D42A7422B600DF2CE9 /* LoveAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B12338E52A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "loveAppUITests" */;
+			buildConfigurationList = B12338E52A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "LoveAppUITests" */;
 			buildPhases = (
 				B12338D12A7422B600DF2CE9 /* Sources */,
 				B12338D22A7422B600DF2CE9 /* Frameworks */,
@@ -250,9 +288,9 @@
 			dependencies = (
 				B12338D72A7422B600DF2CE9 /* PBXTargetDependency */,
 			);
-			name = loveAppUITests;
+			name = LoveAppUITests;
 			productName = loveAppUITests;
-			productReference = B12338D52A7422B600DF2CE9 /* loveAppUITests.xctest */;
+			productReference = B12338D52A7422B600DF2CE9 /* LoveAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -278,7 +316,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B12338B02A7422B500DF2CE9 /* Build configuration list for PBXProject "loveApp" */;
+			buildConfigurationList = B12338B02A7422B500DF2CE9 /* Build configuration list for PBXProject "LoveApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -293,9 +331,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B12338B42A7422B500DF2CE9 /* loveApp */,
-				B12338CA2A7422B600DF2CE9 /* loveAppTests */,
-				B12338D42A7422B600DF2CE9 /* loveAppUITests */,
+				B12338B42A7422B500DF2CE9 /* LoveApp */,
+				B12338CA2A7422B600DF2CE9 /* LoveAppTests */,
+				B12338D42A7422B600DF2CE9 /* LoveAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -342,9 +380,11 @@
 				B12338B92A7422B500DF2CE9 /* AppDelegate.swift in Sources */,
 				B12339102A75578600DF2CE9 /* CustomView.swift in Sources */,
 				B12338BB2A7422B500DF2CE9 /* SceneDelegate.swift in Sources */,
+				B12339242A77FE6000DF2CE9 /* Coordinator.swift in Sources */,
 				B123391B2A76FD5A00DF2CE9 /* CustomViewModel.swift in Sources */,
 				B12338F72A7535C300DF2CE9 /* LoginVC.swift in Sources */,
-				B12339122A755DA300DF2CE9 /* Extensions+Helpers.swift in Sources */,
+				B12339122A755DA300DF2CE9 /* UIView+Extensions.swift in Sources */,
+				B123391D2A77F92F00DF2CE9 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,12 +410,12 @@
 /* Begin PBXTargetDependency section */
 		B12338CD2A7422B600DF2CE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B12338B42A7422B500DF2CE9 /* loveApp */;
+			target = B12338B42A7422B500DF2CE9 /* LoveApp */;
 			targetProxy = B12338CC2A7422B600DF2CE9 /* PBXContainerItemProxy */;
 		};
 		B12338D72A7422B600DF2CE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B12338B42A7422B500DF2CE9 /* loveApp */;
+			target = B12338B42A7422B500DF2CE9 /* LoveApp */;
 			targetProxy = B12338D62A7422B600DF2CE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -584,7 +624,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/loveApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/loveApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoveApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LoveApp";
 			};
 			name = Debug;
 		};
@@ -604,7 +644,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/loveApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/loveApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoveApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LoveApp";
 			};
 			name = Release;
 		};
@@ -647,7 +687,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B12338B02A7422B500DF2CE9 /* Build configuration list for PBXProject "loveApp" */ = {
+		B12338B02A7422B500DF2CE9 /* Build configuration list for PBXProject "LoveApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B12338DD2A7422B600DF2CE9 /* Debug */,
@@ -656,7 +696,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B12338DF2A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "loveApp" */ = {
+		B12338DF2A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "LoveApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B12338E02A7422B600DF2CE9 /* Debug */,
@@ -665,7 +705,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B12338E22A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "loveAppTests" */ = {
+		B12338E22A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "LoveAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B12338E32A7422B600DF2CE9 /* Debug */,
@@ -674,7 +714,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B12338E52A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "loveAppUITests" */ = {
+		B12338E52A7422B600DF2CE9 /* Build configuration list for PBXNativeTarget "LoveAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B12338E62A7422B600DF2CE9 /* Debug */,

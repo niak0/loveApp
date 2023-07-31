@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="loveApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="LoveApp" customModuleProvider="target">
             <connections>
                 <outlet property="feedProfileView" destination="aMw-Bs-pQQ" id="Ept-FA-t4A"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,17 +25,20 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qua-ct-zCW">
                             <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="78"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="profil"/>
+                            <state key="normal" image="profile"/>
+                            <connections>
+                                <action selector="profileButtonTapped:" destination="-1" eventType="touchUpInside" id="834-nm-eua"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4l-To-v20">
                             <rect key="frame" x="155.66666666666666" y="0.0" width="65.333333333333343" height="78"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="alev"/>
+                            <buttonConfiguration key="configuration" style="plain" image="logo"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOP-KQ-sX2">
                             <rect key="frame" x="311" y="0.0" width="65.666666666666686" height="78"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="mesaj"/>
+                            <state key="normal" image="message"/>
                         </button>
                     </subviews>
                     <constraints>
@@ -52,12 +55,12 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-1d-UsJ">
                             <rect key="frame" x="0.0" y="0.0" width="64" height="80"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="yenile"/>
+                            <state key="normal" image="undo"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-Cn-jib">
                             <rect key="frame" x="64" y="0.0" width="80" height="80"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="kapat"/>
+                            <state key="normal" image="dislike"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-aM-Rsj">
                             <rect key="frame" x="144" y="0.0" width="64" height="80"/>
@@ -98,14 +101,14 @@
         </view>
     </objects>
     <resources>
-        <image name="alev" width="64" height="64"/>
         <image name="boost" width="64" height="64"/>
-        <image name="kapat" width="80" height="80"/>
+        <image name="dislike" width="80" height="80"/>
         <image name="like" width="80" height="80"/>
-        <image name="mesaj" width="34.5" height="30.5"/>
-        <image name="profil" width="26" height="33.5"/>
+        <image name="logo" width="66.666664123535156" height="61"/>
+        <image name="message" width="34.5" height="30.5"/>
+        <image name="profile" width="26" height="33.5"/>
         <image name="superLike" width="64" height="64"/>
-        <image name="yenile" width="64" height="64"/>
+        <image name="undo" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

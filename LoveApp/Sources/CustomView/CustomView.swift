@@ -32,7 +32,7 @@ final class CustomView : UIView {
         whiteBarStackView.distribution = .fillEqually
         
         (0..<barCount).forEach { a in
-            var bView = UIView()
+            let bView = UIView()
             bView.backgroundColor = .white
             whiteBarStackView.addArrangedSubview(bView)
         }
