@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct LoginViewModel {
+struct SignInViewModel {
     
 }

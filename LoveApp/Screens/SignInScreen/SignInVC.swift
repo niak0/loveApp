@@ -7,19 +7,34 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class SignInVC: UIViewController {
+    // MARK: - UI Elements
+    
+    // MARK: - Properties
     var coordinator : Coordinator?
-
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         coordinator = Coordinator(navigationController: self.navigationController!)
         
         
     }
-
+    // MARK: - Functions
+    
+    // MARK: - Actions
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        coordinator?.push(.signUpVC)
+    }
     @IBAction func logInButtonTapped(_ sender: Any) {
-        coordinator?.push(.homeVC)
+        coordinator?.setTabbar(from: self)
     }
     
 }
+    // MARK: - Extensions
+    
+
+    
+
+    
+
+
