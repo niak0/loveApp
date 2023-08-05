@@ -20,7 +20,7 @@ struct AdsModel: TurnCustomViewModel {
         attrText.append(NSAttributedString(string: "\n\(adSubtitle)", attributes: [
             .font : UIFont.systemFont(ofSize: 20, weight: .regular),
             .backgroundColor : UIColor.darkGray]))
-        return CustomViewModel(photos: adImages, personalInfos: attrText, textAligment: .center)
+        return CustomViewModel(photos: adImages, personalInfos: attrText, textAligment: .center, model: self)
     }
 
 }

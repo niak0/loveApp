@@ -1,17 +1,27 @@
 import UIKit
+protocol CustomViewDelegate: AnyObject {
+    func userModelDidUpdateInCustomView(_ userModel: CustomViewModel)
+}
 
 final class CustomView : UIView {
     // MARK: - UI Elements
     @IBOutlet weak var userImageView: UIImageView!
     // MARK: - Properties
+    var customViewDelegate: CustomViewDelegate?
     var userModel : CustomViewModel! {
         didSet {
+            if let _ = userModel.model as? AdsModel {
+                self.moreInfoButton.isHidden = true
+                self.whiteBarStackView.isHidden = true
+            }
             setWhiteBarStackView(barCount: userModel.photos.count)
             userImageView.image = userModel.photos.first
             userInfoLabel.attributedText = userModel.infoAttrText
             userInfoLabel.textAlignment = userModel.textAligment
+            userModel.delegate = self
         }
     }
+    
     var imageIndex = 0
     var whiteBarStackView = UIStackView()
     let gradientLayer = CAGradientLayer()
@@ -36,8 +46,6 @@ final class CustomView : UIView {
         userImageView.fullSuperView()
         makeGradiant()
         setLayouts()
-       
-       
                 
         let panG = UIPanGestureRecognizer(target: self, action: #selector(panGTapped))
         addGestureRecognizer(panG)
@@ -45,14 +53,18 @@ final class CustomView : UIView {
         addGestureRecognizer(tapG)
     }
     // MARK: - Functions
-    private func setLayouts() {
-        addSubview(userInfoLabel)
-        userInfoLabel.textColor = .white
-        userInfoLabel.numberOfLines = 0
-        _ = userInfoLabel.anchor(top: nil, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 10, bottom: 5, right: 0))
-        
-        addSubview(moreInfoButton)
-        _ = moreInfoButton.anchor(top: nil, bottom: bottomAnchor, leading: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 20, right: 15))
+    @objc func moreInfoButtonTapped() {
+        customViewDelegate?.userModelDidUpdateInCustomView(self.userModel)
+    }
+    private func setImageIndexOberving() { // burada imageIndex değişkeni değiştiğinde çalıştırılacak olan kodları tanımlıyoruz. Bu kodlar, imageIndexObserver closure'una atanır ve bu closure, imageIndex değişkeninin değeri değiştiğinde çağrılır.
+//        userModel.imageIndexObserver = {[weak self] (imageIndex, image) in
+//            self?.userImageView.image = image
+//            self?.whiteBarStackView.arrangedSubviews.forEach { sView in //ekrana her basıldıgında tüm barlar gri olucak
+//                sView.backgroundColor = .gray
+//            }
+//            self?.whiteBarStackView.arrangedSubviews[imageIndex].backgroundColor = .white // her seferinde seçili index'in barı beyaz olucak
+//            
+//        }
     }
     private func makeGradiant() {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
@@ -103,28 +115,26 @@ final class CustomView : UIView {
             }
         }
     }
-    // MARK: - Actions
-    @objc func moreInfoButtonTapped() {
-        let detailVC = UserDetailVC()
+    private func setLayouts() {
+        addSubview(userInfoLabel)
+        userInfoLabel.textColor = .white
+        userInfoLabel.numberOfLines = 0
+        _ = userInfoLabel.anchor(top: nil, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 10, bottom: 5, right: 0))
         
-        
+        addSubview(moreInfoButton)
+        _ = moreInfoButton.anchor(top: nil, bottom: bottomAnchor, leading: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 20, right: 15))
     }
+
+    // MARK: - Actions
+
     @objc func tapGTapped(tapGesture : UITapGestureRecognizer) {
         let tapLocation = tapGesture.location(in: nil)
         
         if tapLocation.x > frame.width / 2 {
-            imageIndex = imageIndex + 1 >= userModel.photos.count ? 0 : imageIndex + 1
+            userModel.nextPhoto()
         } else {
-            imageIndex = imageIndex - 1 < 0 ? userModel.photos.count - 1 : imageIndex - 1
+            userModel.previousPhoto()
         }
-        
-        let willShowImage = userModel.photos[imageIndex]
-        userImageView.image = willShowImage
-        
-        whiteBarStackView.arrangedSubviews.forEach { sView in //ekrana her basıldıgında tüm barlar gri olucak
-            sView.backgroundColor = .gray
-        }
-        whiteBarStackView.arrangedSubviews[imageIndex].backgroundColor = .white // her seferinde seçili index'in barı beyaz olucak
     }
 
     @objc func panGTapped(panGesture : UIPanGestureRecognizer) {
@@ -150,5 +160,14 @@ final class CustomView : UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         fatalError("init(coder:) has not been implemented")
+    }
+}
+extension CustomView : CustomViewModelDelegate {
+    func imageIndexDidUpdate(_ index: Int, _ image: UIImage) {
+        self.userImageView.image = image
+        self.whiteBarStackView.arrangedSubviews.forEach { sView in //ekrana her basıldıgında tüm barlar gri olucak
+        sView.backgroundColor = .gray
+            }
+        self.whiteBarStackView.arrangedSubviews[index].backgroundColor = .white // her seferinde seçili index'in barı beyaz olucak
     }
 }

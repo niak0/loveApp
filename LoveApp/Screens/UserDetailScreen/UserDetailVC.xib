@@ -10,6 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailVC" customModule="LoveApp" customModuleProvider="target">
             <connections>
+                <outlet property="photosView" destination="OSk-Wu-tDU" id="kgK-bG-HUz"/>
+                <outlet property="userBiographyLbl" destination="uGG-Hh-siK" id="6TZ-Fz-oQa"/>
+                <outlet property="userCityLbl" destination="3RM-aR-9SW" id="9Lq-3w-M6I"/>
+                <outlet property="userGenderLbl" destination="vxn-pU-GiG" id="LPj-qS-iNT"/>
+                <outlet property="userHeightLbl" destination="cj9-ec-URs" id="3bS-nq-zno"/>
+                <outlet property="userLocationLbl" destination="ckW-av-KCD" id="7sf-dT-0ky"/>
+                <outlet property="userNameLbl" destination="6Nc-eh-wdA" id="zs2-tL-Nf0"/>
+                <outlet property="verifiedControl" destination="qVd-hQ-o2e" id="Re6-DH-hU3"/>
+                <outlet property="verifiedLbl" destination="qVd-hQ-o2e" id="X3r-oh-07p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,20 +33,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUd-iQ-54r" userLabel="ContainerView">
                             <rect key="frame" x="0.0" y="-59" width="393" height="1500"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSk-Wu-tDU">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSk-Wu-tDU" userLabel="PhotosView">
                                     <rect key="frame" x="8" y="60" width="377" height="351"/>
                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="351" id="A5S-bz-rhq"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verified" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVd-hQ-o2e">
-                                    <rect key="frame" x="295" y="430" width="58.333333333333314" height="20.333333333333314"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.4701967239" green="0.092280112210000001" blue="0.76785165070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="B1N-sq-RDT">
                                     <rect key="frame" x="24" y="459" width="161" height="81.333333333333371"/>
                                     <subviews>
@@ -74,14 +76,6 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-eb-tzJ">
-                                    <rect key="frame" x="24" y="663" width="340" height="81"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Okan, 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-eh-wdA">
                                     <rect key="frame" x="24" y="430" width="101" height="21"/>
                                     <constraints>
@@ -104,6 +98,20 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGG-Hh-siK">
+                                    <rect key="frame" x="24" y="663" width="329" height="63"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verified" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVd-hQ-o2e">
+                                    <rect key="frame" x="271" y="430" width="102" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.4701967239" green="0.092280112210000001" blue="0.76785165070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>

@@ -6,6 +6,7 @@ struct UserModel: TurnCustomViewModel {
     let userLocation : String
     let city : String
     let userImages : [UIImage]
+    let verified : String
     let userBasicAbout: UserBasicAboutModel
     let userMoreAbout: UserMoreAboutModel
     
@@ -14,10 +15,11 @@ struct UserModel: TurnCustomViewModel {
         attrText.append(NSAttributedString(string: " \(userAge)", attributes: [.font : UIFont.systemFont(ofSize: 23, weight: .regular)]))
         attrText.append(NSAttributedString(string: "\nLive in \(city)", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular)]))
         attrText.append(NSAttributedString(string: "\n\(userLocation) km away", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular)]))
-        return CustomViewModel(photos: userImages, personalInfos: attrText, textAligment: .left)
+        return CustomViewModel(photos: userImages, personalInfos: attrText, textAligment: .left, model: self)
     }
 }
 struct UserBasicAboutModel {
+    let biography : String
     let lookingFor : String
     let work : String
     let education : String
@@ -34,6 +36,8 @@ struct UserMoreAboutModel {
     let politics : String
     let starSign : String
 }
+
+
 
 
 

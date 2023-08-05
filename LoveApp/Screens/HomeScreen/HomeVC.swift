@@ -3,11 +3,10 @@ import UIKit
 class HomeVC: UIViewController {
     // MARK: - UI Elements
     @IBOutlet weak var feedProfileView: UIView!
-
     // MARK: - Properties
     let dataArray = [
-        UserModel(userName: "Okan", userAge: 24, userLocation: "16", city: "Ankara", userImages: [UIImage(named: "6")!,UIImage(named: "7")!,UIImage(named: "2")!,UIImage(named: "3")!], userBasicAbout: UserBasicAboutModel(lookingFor: "Manita", work: "IOS Developer", education: "Hacettepe University", gender: "Make"), userMoreAbout: UserMoreAboutModel(height: "185", exercise: "Somethimes", drinking: "Also", smoking: "Yes", sleepingHabbits: "Night Owl", dietaryPreference: "Vegan", religion: "Terorist", politics: "AKP", starSign: "Moon")).turnCustomViewModel(),
-        UserModel(userName: "Okan", userAge: 24, userLocation: "16", city: "Ankara", userImages: [UIImage(named: "6")!,UIImage(named: "7")!,UIImage(named: "2")!,UIImage(named: "3")!], userBasicAbout: UserBasicAboutModel(lookingFor: "Manita", work: "IOS Developer", education: "Hacettepe University", gender: "Make"), userMoreAbout: UserMoreAboutModel(height: "185", exercise: "Somethimes", drinking: "Also", smoking: "Yes", sleepingHabbits: "Night Owl", dietaryPreference: "Vegan", religion: "Terorist", politics: "AKP", starSign: "Moon")).turnCustomViewModel(),
+        UserModel(userName: "Okan", userAge: 24, userLocation: "16", city: "Ankara", userImages: [UIImage(named: "6")!,UIImage(named: "7")!,UIImage(named: "2")!,UIImage(named: "3")!], verified: "Verified", userBasicAbout: UserBasicAboutModel(biography: "buluşmak isteyen varsa yazsın", lookingFor: "Manita", work: "IOS Developer", education: "Hacettepe University", gender: "Male"), userMoreAbout: UserMoreAboutModel(height: "185", exercise: "Somethimes", drinking: "Also", smoking: "Yes", sleepingHabbits: "Night Owl", dietaryPreference: "Vegan", religion: "Terorist", politics: "AKP", starSign: "Moon")).turnCustomViewModel(),
+        UserModel(userName: "Merve", userAge: 20, userLocation: "31", city: "Balıkesir", userImages: [UIImage(named: "6")!,UIImage(named: "4")!,UIImage(named: "5")!,UIImage(named: "3")!], verified: "Not verified", userBasicAbout: UserBasicAboutModel(biography: "Selam ben ankaradan okan beni arayın", lookingFor: "Manita", work: "IOS Developer", education: "Hacettepe University", gender: "Female"), userMoreAbout: UserMoreAboutModel(height: "185", exercise: "Somethimes", drinking: "Also", smoking: "Yes", sleepingHabbits: "Night Owl", dietaryPreference: "Vegan", religion: "Terorist", politics: "AKP", starSign: "Moon")).turnCustomViewModel(),
         AdsModel(adTitle: "Apple", adSubtitle: "Download Now!", adImages: [UIImage(named: "6")!]).turnCustomViewModel()
     ]
     // MARK: - Life Cycle
@@ -15,6 +14,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setProfiles()
         prepareNavigationBar()
+
         
     }
     
@@ -34,6 +34,7 @@ class HomeVC: UIViewController {
             customView.userModel = userModel
             feedProfileView.addSubview(customView)
             customView.fullSuperView()
+            customView.customViewDelegate = self
         }
     }
     
@@ -52,4 +53,10 @@ class HomeVC: UIViewController {
 }
 
 // MARK: - Extensions
-
+extension HomeVC : CustomViewDelegate {
+    func userModelDidUpdateInCustomView(_ userModel: CustomViewModel) {
+        let userDetailVC = UserDetailVC()
+        userDetailVC.user = userModel
+        self.present(userDetailVC, animated: true)
+    }
+}
