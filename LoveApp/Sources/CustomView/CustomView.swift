@@ -1,6 +1,6 @@
 import UIKit
 protocol CustomViewDelegate: AnyObject {
-    func userModelDidUpdateInCustomView(_ userModel: CustomViewModel)
+    func didSendUserModel(_ userModel: CustomViewModel)
 }
 
 final class CustomView : UIView {
@@ -18,6 +18,7 @@ final class CustomView : UIView {
             userImageView.image = userModel.photos.first
             userInfoLabel.attributedText = userModel.infoAttrText
             userInfoLabel.textAlignment = userModel.textAligment
+//            setImageIndexOberving()
             userModel.delegate = self
         }
     }
@@ -54,7 +55,7 @@ final class CustomView : UIView {
     }
     // MARK: - Functions
     @objc func moreInfoButtonTapped() {
-        customViewDelegate?.userModelDidUpdateInCustomView(self.userModel)
+        customViewDelegate?.didSendUserModel(self.userModel)
     }
     private func setImageIndexOberving() { // burada imageIndex değişkeni değiştiğinde çalıştırılacak olan kodları tanımlıyoruz. Bu kodlar, imageIndexObserver closure'una atanır ve bu closure, imageIndex değişkeninin değeri değiştiğinde çağrılır.
 //        userModel.imageIndexObserver = {[weak self] (imageIndex, image) in
@@ -63,7 +64,6 @@ final class CustomView : UIView {
 //                sView.backgroundColor = .gray
 //            }
 //            self?.whiteBarStackView.arrangedSubviews[imageIndex].backgroundColor = .white // her seferinde seçili index'in barı beyaz olucak
-//            
 //        }
     }
     private func makeGradiant() {
@@ -96,7 +96,7 @@ final class CustomView : UIView {
     
     private func panEnded(_ panGesture : UIPanGestureRecognizer) {
         let rotationDirection: CGFloat = panGesture.translation(in: nil).x > 0 ? 1 : -1 // viewi sağa götürürsen pozitif sola götürürsen negatif olur
-        let thresholdValue: CGFloat = 150
+        let thresholdValue: CGFloat = 160
         let profileHidden : Bool = abs(panGesture.translation(in: nil).x) > thresholdValue // burada mutlak değer aldık çünkü sola götürünce hep eksi olacağı için hep false dönecekti şu an o düzeldi
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseOut,
         animations:  {

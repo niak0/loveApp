@@ -8,15 +8,12 @@
 import UIKit
 
 class SignUpVC: UIViewController {
-    var coordinator: Coordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
-        coordinator = Coordinator(navigationController: self.navigationController!)
 
     }
 
     @IBAction func logInButtonTapped(_ sender: UIButton) {
-        coordinator?.pop()
     }
     
 

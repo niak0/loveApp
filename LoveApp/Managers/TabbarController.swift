@@ -8,7 +8,7 @@
 import UIKit
 
 class TabbarController: UITabBarController {
-    var coordinator : AppCoordinator?
+    var coordinator : Coordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,10 +29,12 @@ class TabbarController: UITabBarController {
         self.tabBar.backgroundColor = .black
         self.tabBar.tintColor = .purple
         
-        coordinator = AppCoordinator(homeNC: homeNC, chatsNC: chatsNC, profileNC: profileNC)
+        coordinator = Coordinator(homeNC: homeNC, chatsNC: chatsNC, profileNC: profileNC)
         
+        homeVC.coordinator = coordinator
+        chatsVC.coordinator = coordinator
+        profileVC.coordinator = coordinator
         
-    }
-    
 
+    }
 }

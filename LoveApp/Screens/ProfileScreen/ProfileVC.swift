@@ -11,7 +11,7 @@ class ProfileVC: UIViewController {
     // MARK: - UI Elements
     @IBOutlet weak var profileIcon: UIImageView!
     // MARK: - Properties
-    
+    var coordinator : Coordinator?
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +21,16 @@ class ProfileVC: UIViewController {
         profileIcon.clipsToBounds = true
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     // MARK: - Functions
     func prepareNavigationBar() {
         let titleView = UILabel()
         titleView.text = "LoveApp"
         navigationItem.titleView = UIView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView:titleView)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "shield.fill"), style: .plain, target: self, action: #selector(settingsButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "shield.fill"), style: .plain, target: self, action: #selector(safetyButtonTapped))
         navigationItem.setRightBarButtonItems([UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(settingsButtonTapped)), UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.fill.badge.plus"), style: .plain, target: self, action: #selector(editProfileButtonTapped))], animated: true)
      
         
@@ -35,14 +38,14 @@ class ProfileVC: UIViewController {
     
     }
     // MARK: - Actions
+    @objc func safetyButtonTapped() {
+        coordinator?.push(.safetyVC, from: self.navigationController!)
+    }
     @objc func settingsButtonTapped () {
-        let settingsVC = SettingsVC()
-        self.navigationController?.pushViewController(settingsVC, animated: true)
+        coordinator?.push(.settingsVC, from: self.navigationController!)
     }
     @objc func editProfileButtonTapped () {
-        let settingsVC = ProfileEditVC()
-        settingsVC.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(settingsVC, animated: true)
+        coordinator?.push(.profileEditVc, from: self.navigationController!)
     }
     
 }

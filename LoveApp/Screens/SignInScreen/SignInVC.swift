@@ -11,11 +11,10 @@ class SignInVC: UIViewController {
     // MARK: - UI Elements
     
     // MARK: - Properties
-    var coordinator : Coordinator?
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        coordinator = Coordinator(navigationController: self.navigationController!)
+        
         
         
     }
@@ -23,10 +22,8 @@ class SignInVC: UIViewController {
     
     // MARK: - Actions
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        coordinator?.push(.signUpVC)
     }
     @IBAction func logInButtonTapped(_ sender: Any) {
-        coordinator?.setTabbar(from: self)
     }
     
 }

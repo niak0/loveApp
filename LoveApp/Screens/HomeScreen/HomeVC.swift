@@ -4,6 +4,7 @@ class HomeVC: UIViewController {
     // MARK: - UI Elements
     @IBOutlet weak var feedProfileView: UIView!
     // MARK: - Properties
+    var coordinator : Coordinator?
     let dataArray = [
         UserModel(userName: "Okan", userAge: 24, userLocation: "16", city: "Ankara", userImages: [UIImage(named: "6")!,UIImage(named: "7")!,UIImage(named: "2")!,UIImage(named: "3")!], verified: "Verified", userBasicAbout: UserBasicAboutModel(biography: "buluşmak isteyen varsa yazsın", lookingFor: "Manita", work: "IOS Developer", education: "Hacettepe University", gender: "Male"), userMoreAbout: UserMoreAboutModel(height: "185", exercise: "Somethimes", drinking: "Also", smoking: "Yes", sleepingHabbits: "Night Owl", dietaryPreference: "Vegan", religion: "Terorist", politics: "AKP", starSign: "Moon")).turnCustomViewModel(),
         UserModel(userName: "Merve", userAge: 20, userLocation: "31", city: "Balıkesir", userImages: [UIImage(named: "6")!,UIImage(named: "4")!,UIImage(named: "5")!,UIImage(named: "3")!], verified: "Not verified", userBasicAbout: UserBasicAboutModel(biography: "Selam ben ankaradan okan beni arayın", lookingFor: "Manita", work: "IOS Developer", education: "Hacettepe University", gender: "Female"), userMoreAbout: UserMoreAboutModel(height: "185", exercise: "Somethimes", drinking: "Also", smoking: "Yes", sleepingHabbits: "Night Owl", dietaryPreference: "Vegan", religion: "Terorist", politics: "AKP", starSign: "Moon")).turnCustomViewModel(),
@@ -14,8 +15,9 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setProfiles()
         prepareNavigationBar()
-
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Functions
@@ -39,24 +41,19 @@ class HomeVC: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func profileButtonTapped(_ sender: UIButton) {
-    }
+ 
     // MARK: - Objc Funcs
     @objc func boostButtonTapped() {
         
     }
     @objc func filterButtonTapped() {
-        let filterVC = FilterVC()
-        filterVC.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(filterVC, animated: true)
+        coordinator?.push(.filterVC, from: self.navigationController!)
     }
 }
 
 // MARK: - Extensions
 extension HomeVC : CustomViewDelegate {
-    func userModelDidUpdateInCustomView(_ userModel: CustomViewModel) {
-        let userDetailVC = UserDetailVC()
-        userDetailVC.user = userModel
-        self.present(userDetailVC, animated: true)
+    func didSendUserModel(_ userModel: CustomViewModel) {
+        coordinator?.push(.userDetailVC(customViewModel: userModel), from: self.navigationController!)
     }
 }

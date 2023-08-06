@@ -13,7 +13,7 @@ final class MessageVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     // MARK: - Properties
-    
+    var coordinator : Coordinator?
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +63,7 @@ extension MessageVC : UITableViewDelegate, UITableViewDataSource {
         return 70
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chatVC = ChatVC()
-        self.navigationController?.pushViewController(chatVC, animated: true)
+        coordinator?.push(.chatVC, from: self.navigationController!)
     }
     
 }

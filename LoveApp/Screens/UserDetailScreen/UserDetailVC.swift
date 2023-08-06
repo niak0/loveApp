@@ -24,6 +24,7 @@ class UserDetailVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         guard let user = user else {return}
         if let user = user.model as? UserModel {
             handleVisibility(for: userCityLbl, with: user.city)
