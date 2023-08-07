@@ -13,8 +13,8 @@ struct UserModel: TurnCustomViewModel {
     func turnCustomViewModel() -> CustomViewModel {
         let attrText = NSMutableAttributedString(string: userName, attributes: [.font : UIFont.systemFont(ofSize: 30, weight: .heavy)])
         attrText.append(NSAttributedString(string: " \(userAge)", attributes: [.font : UIFont.systemFont(ofSize: 23, weight: .regular)]))
-        attrText.append(NSAttributedString(string: "\nLive in \(city)", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular)]))
         attrText.append(NSAttributedString(string: "\n\(userLocation) km away", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular)]))
+        attrText.append(NSAttributedString(string: "\nLive in \(city)", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular)]))
         return CustomViewModel(photos: userImages, personalInfos: attrText, textAligment: .left, model: self)
     }
 }

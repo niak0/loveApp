@@ -1,7 +1,8 @@
 import UIKit
 final class ProfileEditVC: UIViewController {
     // MARK: - UI Elements
-    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     // MARK: - Properties
     var aboutMeArray : [ProfileEditModel] = [
         ProfileEditModel(title: AboutMe.work.rawValue, icon: UIImage(systemName: "person.crop.rectangle")!),
@@ -21,14 +22,22 @@ final class ProfileEditVC: UIViewController {
         ProfileEditModel(title: MyInfo.politics.rawValue, icon: UIImage(systemName: "figure.dress.line.vertical.figure")!),
         ProfileEditModel(title: MyInfo.starSign.rawValue, icon: UIImage(systemName: "house.circle")!)
     ]
+    var coordinator: Coordinator?
     // MARK: - Life Cycle
-    @IBOutlet weak var tableView: UITableView!
+    let userModel = UserModel(userName: "Okan", userAge: 24, userLocation: "16", city: "Ankara", userImages: [UIImage(named: "6")!,UIImage(named: "7")!,UIImage(named: "2")!,UIImage(named: "3")!], verified: "Verified", userBasicAbout: UserBasicAboutModel(biography: "buluşmak isteyen varsa yazsın", lookingFor: "Manita", work: "IOS Developer", education: "Hacettepe University", gender: "Male"), userMoreAbout: UserMoreAboutModel(height: "185", exercise: "Somethimes", drinking: "Also", smoking: "Yes", sleepingHabbits: "Night Owl", dietaryPreference: "Vegan", religion: "Terorist", politics: "AKP", starSign: "Moon")).turnCustomViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTableView()
+        collectionTableView()
+        
         self.tabBarController?.tabBar.isHidden = true
     }
     // MARK: - Functions
+    func collectionTableView() {
+        collectionView.register(UINib(nibName: "ProfileEditCollectionCell", bundle: nil), forCellWithReuseIdentifier: "profileEditCollectionCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
     func prepareTableView() {
         tableView.register(UINib(nibName: "ProfileEditTableCell", bundle: nil), forCellReuseIdentifier: "profileEditCell")
         tableView.dataSource = self
@@ -36,8 +45,28 @@ final class ProfileEditVC: UIViewController {
     }
     // MARK: - Actions
     
+    @IBAction func previewButtonTapped(_ sender: UIButton) {
+        coordinator?.present(to: .userDetailVC(customViewModel: userModel), modalyType: .automatic, from: self.navigationController!)
+    }
 }
 // MARK: - Extensions
+extension ProfileEditVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileEditCollectionCell", for: indexPath) as! ProfileEditCollectionCell
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+}
 extension ProfileEditVC : UITableViewDelegate, UITableViewDataSource {
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileEditCell", for: indexPath) as! ProfileEditTableCell
@@ -58,15 +87,13 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = EditingProfileVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        coordinator?.push(.editingProfileVC, from: self.navigationController!)
     }
 
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            
             return InfoType.aboutMe.rawValue
         case 1:
             return InfoType.myInfo.rawValue
@@ -106,7 +133,6 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         } else {
             label.text = InfoType.myInfo.rawValue
         }
-        
         label.textColor = UIColor.white
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -115,7 +141,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
  
         NSLayoutConstraint.activate([
         label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-        label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 1)])
+        label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 15)])
         return headerView
     }
     

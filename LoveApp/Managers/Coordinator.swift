@@ -30,15 +30,18 @@ class Coordinator {
             case .filterVC:
                 return FilterVC()
             case .userDetailVC(customViewModel: let customViewModel):
-                let userDetailVC = UserDetailVC()
-                userDetailVC.user = customViewModel
-                return userDetailVC
+                let vc = UserDetailVC()
+                vc.user = customViewModel
+                return vc
             case .chatVC:
                 return ChatVC()
             case .profileEditVc:
-                return ProfileEditVC()
+                let vc = ProfileEditVC()
+                vc.coordinator = self
+                return vc
             case .editingProfileVC:
-                return EditingProfileVC()
+                let vc = EditingProfileVC()
+                return vc
             case .settingsVC:
                 return SettingsVC()
             case .safetyVC:

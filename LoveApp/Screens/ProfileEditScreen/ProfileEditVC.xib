@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileEditVC" customModule="LoveApp" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="U5e-l0-6wc" id="F16-ao-Zfs"/>
                 <outlet property="tableView" destination="x9Q-pC-ofA" id="0uH-Jg-yOS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,41 +27,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBh-ef-U1V" userLabel="ContentView">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-ZQ-1M0">
-                                    <rect key="frame" x="36" y="56" width="320" height="321"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrS-9W-CoJ">
-                                    <rect key="frame" x="264" y="85" width="81" height="31"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                    <color key="tintColor" red="0.4701967239" green="0.092280112210000001" blue="0.76785165070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="Edit" imagePadding="0.0">
-                                        <imageReference key="image" image="camera.fill" catalog="system" symbolScale="medium"/>
-                                        <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
-                                    </buttonConfiguration>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J9-eV-onB">
-                                    <rect key="frame" x="8" y="385" width="168" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Okan, 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-T5-xFe">
-                                    <rect key="frame" x="8" y="8" width="154" height="40"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Okan, 24" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-T5-xFe">
+                                    <rect key="frame" x="22" y="8" width="154" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" style="grouped" separatorStyle="none" sectionIndexMinimumDisplayRowCount="2" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x9Q-pC-ofA">
-                                    <rect key="frame" x="8" y="458" width="377" height="670"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                    <color key="separatorColor" red="0.66569650170000005" green="0.24555376170000001" blue="0.92309850449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rf0-9j-Xiq">
                                     <rect key="frame" x="217" y="8" width="168" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,9 +42,25 @@
                                     <buttonConfiguration key="configuration" style="plain" title="Preview your profile">
                                         <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="previewButtonTapped:" destination="-1" eventType="touchUpInside" id="9JJ-eA-owi"/>
+                                    </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J9-eV-onB">
+                                    <rect key="frame" x="22" y="402" width="168" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" style="grouped" separatorStyle="none" sectionIndexMinimumDisplayRowCount="2" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x9Q-pC-ofA">
+                                    <rect key="frame" x="8" y="494" width="377" height="670"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <color key="separatorColor" red="0.66569650170000005" green="0.24555376170000001" blue="0.92309850449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-hz-iFQ">
-                                    <rect key="frame" x="8" y="414" width="377" height="36"/>
+                                    <rect key="frame" x="22" y="431" width="353" height="55"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" systemColor="systemGrayColor"/>
                                     <state key="normal" title="Button"/>
@@ -86,6 +75,28 @@
                                             </fragment>
                                         </attributedString>
                                         <color key="baseForegroundColor" red="0.4701967239" green="0.092280112210000001" blue="0.76785165070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-l0-6wc">
+                                    <rect key="frame" x="0.0" y="56" width="393" height="328"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lAd-Sx-NOE">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrS-9W-CoJ">
+                                    <rect key="frame" x="278" y="82" width="81" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                    <color key="tintColor" red="0.4701967239" green="0.092280112210000001" blue="0.76785165070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="Edit" imagePadding="0.0">
+                                        <imageReference key="image" image="camera.fill" catalog="system" symbolScale="medium"/>
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                     </buttonConfiguration>
                                 </button>
                             </subviews>
@@ -118,7 +129,6 @@
         </view>
     </objects>
     <resources>
-        <image name="5" width="5184" height="3456"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="pencil.line" catalog="system" width="128" height="98"/>
         <systemColor name="systemGray4Color">

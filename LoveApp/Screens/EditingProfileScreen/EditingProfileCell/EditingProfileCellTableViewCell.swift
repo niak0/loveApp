@@ -9,15 +9,18 @@ import UIKit
 
 class EditingProfileCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var answerLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        answerLabel.layer.cornerRadius = 20
+        answerLabel.layer.borderWidth = 2
+        answerLabel.layer.borderColor = UIColor.purple.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
     
 }
